@@ -22,6 +22,8 @@
 #include "platforms/arm/d21/fastled_arm_d21.h"
 #elif defined(ESP8266)
 #include "platforms/esp/8266/fastled_esp8266.h"
+#elif defined(CPU_MKL27Z64VDA4) || defined(CPU_MKL27Z64VFM4) || defined(CPU_MKL27Z64VLH4)
+#include "platforms/arm/kl27/fastled_arm_kl27.h"
 #else
 // AVR platforms
 #include "platforms/avr/fastled_avr.h"

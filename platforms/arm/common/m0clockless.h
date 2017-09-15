@@ -229,7 +229,7 @@ showLedData(volatile uint32_t *_port, uint32_t _bitmask, const uint8_t *_leds, u
     // We're not allowing interrupts - run the entire loop in asm to keep things
     // as tight as possible.  In an ideal world, we should be pushing out ws281x
     // leds (or other 3-wire leds) with zero gaps between pixels.
-    asm __volatile__ (
+    __asm __volatile__ (
       // pre-load byte 0
     LOADLEDS3(0) LOADDITHER7(0) DITHER5 SCALE4(0) ADJDITHER7(0) SWAPBBN1
 
@@ -266,7 +266,7 @@ showLedData(volatile uint32_t *_port, uint32_t _bitmask, const uint8_t *_leds, u
       HI2 D1 QLO4 SWAPBBN1        D2(1) LO2 D3(5) CMPLOOP5
 
       M0_ASM_ARGS
-    );
+      );
 #else
     // We're allowing interrupts - track the loop outside the asm code, to allow
     // inserting the interrupt overrun checks.

@@ -22,6 +22,8 @@
 #include "platforms/arm/d21/led_sysdefs_arm_d21.h"
 #elif defined(ESP8266)
 #include "platforms/esp/8266/led_sysdefs_esp8266.h"
+#elif defined(CPU_MKL27Z64VDA4) || defined(CPU_MKL27Z64VFM4) || defined(CPU_MKL27Z64VLH4)
+#include "platforms/arm/kl27/led_sysdefs_arm_kl27.h"
 #else
 // AVR platforms
 #include "platforms/avr/led_sysdefs_avr.h"

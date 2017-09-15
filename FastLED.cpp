@@ -6,6 +6,12 @@
 volatile uint32_t fuckit;
 #endif
 
+extern "C" {
+   extern uint32_t millis();
+   extern uint32_t micros();
+   extern void delay(uint32_t d);
+}
+
 FASTLED_NAMESPACE_BEGIN
 
 void *pSmartMatrix = NULL;
